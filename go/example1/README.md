@@ -33,25 +33,26 @@ that is a bad idea) so all you need to do is invoke it:
 ./ex1
 ```
 
-The only thing written to STDOUT is the JSON response body so you can
-safely pipe this through jq to get a more intelligible pretty-printed
- view of the JSON retruned by the REMS server:
+The only thing written to `STDOUT` is the JSON response body so you can
+safely pipe this through `jq` to get a more intelligible pretty-printed
+ view of the JSON returned by the REMS server:
 
 ```
 ./ex1 | jq
 ```
 
-`ex1` does some very basic logging so you might want to redirect STDERR to
-a file. If yo don't redirect the logging, it will appear on the terminal
-but it will not affect `jq` because the logging goes to STDERR and it's
-the output of STDOUT that gets piped to jq.
+`ex1` does some very basic logging so you might want to redirect
+`STDERR` to a file as shown below.
+If you don't redirect the logging, it will appear on the terminal
+but it will not affect `jq` because the logging goes to `STDERR` but
+it's `STDOUT` that gets piped to `jq`.
 
 ```
-./ex1 2> my.log | jq
+./ex1 2>my.log | jq
 ```
 
-The output is a list of applications that the user can see and it's very
-long but the start should look something like:
+The output from REMS is a list of applications that the user can see.
+It's very long but the start should look something like:
 
 ```[
   {
@@ -104,4 +105,4 @@ long but the start should look something like:
 ```
 
 `...` is where I've elided the rest of the output for space
-cponsiderations.
+considerations.
