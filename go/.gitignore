@@ -1,0 +1,13 @@
+# Test binary, built with `go test -c`
+*.test
+
+# Files from runtime/pprof profiling
+*.prof
+*.svg
+
+# Stuff to ignore.
+.git
+*.log
+*.swp
+ex1
+tmp
